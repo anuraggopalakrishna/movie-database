@@ -9,8 +9,9 @@ const Homepage = () => {
             try {
                 console.log('Fetching movies')
                 const response = await fetch('/api/movies');
-                console.log(response);
-            
+                
+                //console.log(response);
+                //header("Content-Type: application/json; charset=UTF-8")
                 const contentType = response.headers.get('content-type');
                 console.log('Content-Type: ' + contentType)
                 // returns 'text/html'
