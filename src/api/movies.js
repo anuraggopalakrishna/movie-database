@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Movie = require('../models/Movie');
+const director = require('../models/Director')
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get('/', async (req, res) => {
 // Get a specific movie
 router.get('/:id', async (req, res) => {
     try {
-        const movie = await Movie.findById(req.params.id).populate('director');
+        const movie = await Movie.findById(req.params.id)//.populate('director');
         res.json({ movie });
     } catch (error) {
         console.error(`Error: ${error.message}`);
